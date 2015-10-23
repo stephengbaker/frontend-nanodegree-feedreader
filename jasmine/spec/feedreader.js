@@ -32,10 +32,14 @@ $(function() {
             expect($('body').hasClass('menu-hidden')).toBe(true);
         });
 
-        it('should toggle hidden when clicked', function() {
+        
+
+        it('should show when clicked', function() {
             $('.menu-icon-link').trigger('click');
             expect($('body').hasClass('menu-hidden')).toBe(false);
+        });
 
+        it('should hide when clicked again', function() {
             $('.menu-icon-link').trigger('click');
             expect($('body').hasClass('menu-hidden')).toBe(true);
         });
@@ -76,7 +80,7 @@ $(function() {
 
         it('should actually change content when new feed is loaded', function() {
             
-            expect(oldFeedContent).not.toMatch(newFeedContent);
+            expect(oldFeedContent).not.toBe(newFeedContent);
 
         });
     });
